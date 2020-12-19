@@ -295,7 +295,7 @@ import numpy as np
 a = np.array([78, 84, 87, 91, 76])
 b = np.array([92, 83, 91, 79, 89])
 dist = np.linalg.norm(a-b)
-print('Differnce in performance between A and B : ', dis)
+print('Differnce in performance between A and B : ', dist)
 
 
 # Write a Python function to print number with commas as thousands separators 
@@ -328,10 +328,6 @@ print(no_of_digits)
 
 
 # Write a Python function to count occurrence of a word in the given text
-text = """Lorem Ipsum is simply dummy text of the 
-printing and typesetting industry. Lorem Ipsum has been 
-the industry's standard dummy text ever since the 1500s"""
-word = "Lorem"
 def text_searcher(text, word):
     count = 0
     for w in text.split():
@@ -355,7 +351,7 @@ def sum_of_digits(num):
   if num == 0:
     return 0
   else:
-    return num % 10 + sumDigits(int(num / 10))
+    return num % 10 + sum_of_digits(int(num / 10))
 
 
 # Write a Python function to check all elements of a list are the same or not
@@ -555,24 +551,24 @@ strObj.printString()
 import os, psutil
 print(psutil.Process(os.getpid()).memory_info().rss / 1024 ** 2)
 
-# Write a program that will provide the ascii value of a character
+# Write a function that will provide the ascii value of a character
 
 def charToASCII(chr):
   return f'ASCII value of {chr} is: {ord(chr)}'
   
-# Write a program to reverse a string
+# Write a function to reverse a string
 
 def revStr(inp):
   inp = inp[::-1]
   return inp
 
-# Write a program to determine the bits used by any number
+# Write a function to determine the bits used by any number
 
 def totalBits(n):
 	return f'total number of bits used in {n} is : {len(bin(n)[2: ])}'
 
 
-# write a program to find the sum of Sine series
+# write a function to find the sum of Sine series
 
 import math
 def sin(x,n):
@@ -585,7 +581,7 @@ def sin(x,n):
     return sine
 
 
-# Write a program to determine whether a given number is even or odd recursively
+# Write a function to determine whether a given number is even or odd recursively
 
 def check(n):
     if (n < 2):
@@ -599,7 +595,6 @@ else:
 
 
 # Write a program to swap two variables inplace
-
 a,b = b,a
 
 # Write a program that prints the words in a comma-separated sequence after sorting them alphabetically.
@@ -609,7 +604,7 @@ items.sort()
 print(','.join(items))
 
 
-# Write a program that takes a base and a power and finds the power of the base using recursion.
+# Write a function that takes a base and a power and finds the power of the base using recursion.
 
 def power(base,exp):
     if(exp==1):
@@ -621,7 +616,7 @@ exp=int(input("Enter exponential value: "))
 print("Result:",power(base,exp))
 
 
-# Write a program to repeat M characters of a string N times
+# Write a function to repeat M characters of a string N times
 
 def multTimes(str, m, n):
     front_len = m
@@ -635,7 +630,7 @@ def multTimes(str, m, n):
 print (multTimes('Hello', 3, 7))
 
 
-# Write a program that will convert a string into camelCase
+# Write a function that will convert a string into camelCase
 
 from re import sub
 def camelCase(string):
@@ -643,27 +638,27 @@ def camelCase(string):
   return string[0].lower() + string[1:]
 
 
-# Write a program to remove empty list from a list using list comprehension
+# Write a function to remove empty list from a list using list comprehension
 def removeEmptyList(li):
   res = [ele for ele in li if ele != []] 
   return res
 
 
-# Write a program to Find the size of a Tuple in Python without garbage values
-
+# Write a function to Find the size of a Tuple in Python without garbage values
+Tuple = (10,20)
 def sizeOfTuple(tup):
   return f'Size of Tuple: {str(Tuple.__sizeof__())} bytes' 
 
-# Write a program, which will find all such numbers between 1000 to 9999 that each digit of the number is an even number.
+# Write a function, which will find all such numbers between 1000 to 9999 that each digit of the number is an even number.
 
 values = []
 for i in range(1000, 9999):
   s = str(i)
   if (int(s[0])%2==0) and (int(s[1])%2==0) and (int(s[2])%2==0) and (int(s[3])%2==0):
-  values.append(s)
+      values.append(s)
 
 
-# Write a program that finds a list is homogeneous 
+# Write a function that finds a list is homogeneous 
 
 def homoList(li):
   res = True
@@ -674,7 +669,7 @@ def homoList(li):
   return res
 
 
-# Write a program to remove a given date type elements from a list.
+# Write a function to remove a given date type elements from a list.
 
 def removeDataType(li,dType):
     res = []
@@ -684,7 +679,7 @@ def removeDataType(li,dType):
     return res
 
 
-# Write a python program to find out the occurence of "i" element before first "j" in the list
+# Write a python function to find out the occurence of "i" element before first "j" in the list
 
 def firstOccurence(arr, i,j):
   res = 0
@@ -697,13 +692,14 @@ def firstOccurence(arr, i,j):
 
 
 # Write a program to check whether a file/path/direcory exists or not
-
+file_path = "path/here"
 import os.path
 os.path.exists(file_path)
 
 
 # Write a program to merge two python dictionaries
-
+x={'key1':'val1','key2':'val2'}
+y={'key3':'val3','key4':'val4'}
 z = {**x, **y} # z = x | y  
 
 
@@ -734,7 +730,7 @@ def num_comm_div(x, y):
     i+=1
   return result
 
-# Write a program to Check whether following json is valid or invalid
+# Write a function to Check whether following json is valid or invalid
 import json
 def validateJSON(jsonData):
     try:
@@ -743,7 +739,7 @@ def validateJSON(jsonData):
         return False
     return True
 
-# Write a program to remove and print every third number from a list of numbers until the list becomes empty
+# Write a function to remove and print every third number from a list of numbers until the list becomes empty
 def remove_nums(int_list):
   position = 3 - 1 
   idx = 0
@@ -792,6 +788,9 @@ def add_without_plus_operator(a, b):
     return a
 
 # Write a program to find the median among three given number
+x=10
+y=20
+z=30
 if y < x and x < z:
     print(x)
 elif z < x and x < y:
@@ -805,7 +804,7 @@ elif y < z and z < x:
 elif x < z and z < y:
     print(z)
 
-# Write a program to count the number of carry operations for each of a set of addition problems
+# Write a function to count the number of carry operations for each of a set of addition problems
 def carry_number(x, y):
   ctr = 0
   if(x == 0 and y == 0):
@@ -831,13 +830,13 @@ def carry_number(x, y):
 a,b = 312, 410
 print(len(str(a*b)))
 
-# Write a program to return the area of a rhombus
+# Write a function to return the area of a rhombus
 def area(d1, a): 
     d2 = (4*(a**2) - d1**2)**0.5
     area = 0.5 * d1 * d2 
     return(area) 
 
-# Write a program that Given a number, find the most significant bit number which is set bit and which is in power of two
+# Write a function that Given a number, find the most significant bit number which is set bit and which is in power of two
 def setBitNumber(n): 
     if (n == 0): 
         return 0
@@ -848,18 +847,18 @@ def setBitNumber(n):
         msb += 1
     return (1 << msb) 
 
-# Write a program to calculate volume of Triangular Pyramid
+# Write a function to calculate volume of Triangular Pyramid
 def volumeTriangular(a, b, h): 
     return (0.1666) * a * b * h 
   
-# Write a Function to calculate volume of Square Pyramid  
+# Write a function to calculate volume of Square Pyramid  
 def volumeSquare(b, h): 
     return (0.33) * b * b * h 
   
-# Write a Function to calculate Volume of Pentagonal Pyramid  
+# Write a function to calculate Volume of Pentagonal Pyramid  
 def volumePentagonal(a, b, h): 
     return (0.83) * a * b * h 
   
-# Write a Function to calculate Volume of Hexagonal Pyramid  
+# Write a function to calculate Volume of Hexagonal Pyramid  
 def volumeHexagonal(a, b, h): 
     return a * b * h
